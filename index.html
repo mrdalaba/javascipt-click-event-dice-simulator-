@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+
+    <style>
+        body {
+            margin: 0; /* remove default spacing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px 0; /* control spacing */
+        }
+
+        .dice {
+            border: solid rgb(0, 38, 255) 2px;
+            height: 80px;
+            width: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0 auto; /* center dice inside container */
+        }
+
+        #number {
+            color: blue;
+            margin: 0; /* remove extra space */
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">   
+    
+    <h1>ROLL THE DICE</h1>
+
+    <div class="dice">
+        <h1 id="number">0</h1>
+    </div>
+    
+    <button onclick="roll()">Roll Dice</button>
+
+</div>
+
+<script>
+function roll() {
+    let num = Math.floor(Math.random() * 6) + 1;
+    document.getElementById("number").textContent = num;
+}
+</script>
+
+</body>
+</html>
